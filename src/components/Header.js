@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <HeaderContainer className="header-container">
       <div className="header-top">
-        <Logo>YuruLife</Logo>
+        <Logo><Link to="/">YuruLife</Link></Logo>
         <NavLink to="/login" className="login-btn">
           <Icon icon={signIn} className="login-icon"/>
           ログイン
