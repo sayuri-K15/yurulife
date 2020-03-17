@@ -1,0 +1,34 @@
+.lead-container {
+  display: grid;
+  grid-template-columns: 700px 1fr;
+}
+
+.content-image {
+  width: 700px;
+  height: 270px;
+  object-fit: cover;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.content-text {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.kerword-tag {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.pickup-content {
+  width: 300px;
+  margin-left: 20px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.pickup-topic {
+  background: #f2f2f2;
+  height: 150px;
+}
