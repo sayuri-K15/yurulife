@@ -1,24 +1,58 @@
 .lead-container {
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: 700px 1fr;
 }
 
 .content-image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative;
+}
+
+.content-image img {
   width: 700px;
   height: 270px;
   object-fit: cover;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
 }
 
 .content-text {
   grid-column: 1 / 2;
-  grid-row: 2 / 3;
+  position: absolute;
+  bottom: 0;
+  background: rgba(153, 153, 153, 0.6);
+  color: #ffffff;
+  margin: 0;
+  padding: 10px 5px;
 }
 
 .kerword-tag {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
+
+}
+
+.tags-list {
+  display: inline-block;
+  margin: 4px 8px;
+  padding: 2px 4px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  font-size: 12px;
+  color: #666666;
+  &::before {
+    content: "# ";
+  }
+  &:hover {
+    border: 1px solid #aaa;
+    transition: 0.8s;
+  }
+}
+.tags-link {
+  &:hover {
+    text-decoration: none;
+    color: #666;
+  }
 }
 
 .pickup-content {

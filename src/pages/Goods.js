@@ -1,20 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Header from "../components/Header"
-import SideMenu from "../components/SideMenu"
-import SideRanking from "../components/SideRanking"
-import Footer from "../components/Footer"
-
+import Header from "../components/Header";
+import ContentGoods from "../components/content/ContentGoods";
+import SideMenu from "../components/SideMenu";
+import SideRanking from "../components/SideRanking";
+import Footer from "../components/Footer";
 
 const Goods = () => {
-    return (
-      <div>
+  return (
+    <div>
+      <div className="wrapper">
         <Header />
+        <ContentGoods />
         <SideMenu />
         <SideRanking />
-        <Footer />
       </div>
-    )
-}
+      <Footer />
+    </div>
+  );
+};
 
 export default Goods;
