@@ -17,8 +17,8 @@ const Main = () => {
         <SideMenu />
         <SideRanking />
         <PaginationBtn />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
