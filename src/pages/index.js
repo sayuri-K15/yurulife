@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Article  from "../components/Articles";
-import PaginationBtn from "../components/pagination/Pagination"
+// import PaginationBtn from "../components/pagination/Pagination"
 import SideMenu  from "../components/SideMenu";
 import SideRanking  from "../components/SideRanking";
 import Footer  from "../components/Footer";
@@ -16,7 +16,7 @@ const Main = () => {
         <Article />
         <SideMenu />
         <SideRanking />
-        <PaginationBtn />
+        {/* <PaginationBtn /> */}
       </div>
       <Footer />
     </div>

@@ -15,7 +15,7 @@ const Header = () => {
           <Icon icon={signIn} className="login-icon"/>
           ログイン
         </NavLink>
-        <NavLink to="/signin" className="signIn-btn">
+        <NavLink to="/signup" className="signIn-btn">
           <Icon icon={ plus } className="signIn-icon"/>
           新規登録
         </NavLink>

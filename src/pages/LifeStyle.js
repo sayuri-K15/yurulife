@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 
 import Header from "../components/Header";
 import ContentLife from "../components/content/ContentLife";
@@ -8,6 +8,11 @@ import SideRanking from "../components/SideRanking";
 import Footer from "../components/Footer";
 
 const LifeStyle = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  })
+
   return (
     <div>
       <div className="wrapper">
