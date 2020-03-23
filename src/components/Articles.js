@@ -1,38 +1,49 @@
-import React, { Component } from 'react'
+import React from "react";
+import { connect } from "react-redux";
+
 import styled from "styled-components";
-import {Link} from "react-router-dom"
-import aroma from "../image/aroma.jpg"
 // import articles from "./articles/Articles.data"
 // import Pagination from "./pagination/Pagination"
-// import ListComponent  from "./pagination/list"
+import ListComponent from "./pagination/list";
+import ArticlesPage from "../components/articles/ArticlesPage";
+import AddArticleForm from "../components/articles/AddArticleForm";
+import FindArticleForm from "../components/articles/FindArticleForm";
+import DeleteArticleForm from "../components/articles/DelArticleForm";
 
-const Article = () => {
-    return (
-      <ArticleContainer className="article-container">
-      {/* <Pagination 
+
+import ArticleData from "../components/firebase/ArticleData"
+
+
+const Article = (props) => {
+  return (
+        <ArticleContainer className="article-container">
+          <ArticleData />
+          {/* <ArticlesPage /> */}
+          {/* <AddArticleForm />
+          <FindArticleForm />
+          <DeleteArticleForm /> */}
+          {/* <ListComponent articles={articles} /> */}
+          {/* <Pagination 
         sum={articles.length}
         per={9}
         initialData={articles.slice(0, 9)}
         component={ListComponent}
-       /> */}
-      {/* //   <div className="article-content">
+      /> */}
+          {/* //   <div className="article-content">
       //     <ThumbnailImg src={aroma} alt=""/>
       //     <p className="article_title">{props.title}</p>
       //     <Link className="menu_name">{props.key}</Link>
-      //   </div> */}
-        
-      </ArticleContainer>
-    )
-}
+    //   </div> */}
+        </ArticleContainer>
+  );
+};
 
-export default Article;
+export default connect((state) => state)(Article);
 
 const ArticleContainer = styled.section`
   background: #f2f2f2;
   width: 700px;
   margin-bottom: 50px;
-  // display: flex;
-  // flex-wrap: wrap;
 
   // .article-content {
   //   display: inline-block;
@@ -47,7 +58,6 @@ const ArticleContainer = styled.section`
   //   }
   // }
 
-
   // .article_title {
   //   width: 100%;
   //   padding: 15px 15px;
@@ -60,9 +70,9 @@ const ArticleContainer = styled.section`
   //   cursor: pointer;
   //   font-size: 10px;
   // }
-`
+`;
 
 const ThumbnailImg = styled.img`
   width: 220px;
   height: 165px;
-`
+`;
