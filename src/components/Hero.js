@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
-import relax from "../image/relax.jpg"
+import desert from "../image/desert.jpg"
+import ControlledCarousel from "./hero/HeroSlide"
 
  const Hero = () => {
     return (
       <HeroContainer className="hero-container">
-        <HeroImg src={relax} />
+        {/* <HeroImg src={desert} /> */}
+        <ControlledCarousel />
       </HeroContainer>
     )
 }
@@ -15,10 +17,14 @@ export default Hero;
 const HeroContainer = styled.div`
   background: #f2f2f2;
   margin-bottom: 20px;
+  width: 700px;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+  }
 
 `
 
 const HeroImg = styled.img`
-  width: 700px;
   height: 400px;
 `

@@ -1,8 +1,35 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import User from '../pages/User';
+// import React, {createContext, useEffect, useState, useCallback} from 'react';
+// import firebase from "firebase";
+// import { Redirect } from 'react-router-dom';
+// import { connect } from "react-redux"
+// import Login from '../components/login/Login';
 
-const Auth = props =>
-  User.isLoggedIn() ? props.children : <Redirect to={'/'} />;
+// export const AuthContext = createContext()
 
-export default Auth;
+// const Auth = ({children}) => {
+
+//   const [currentUser, setCurrentUser] = useState(null)
+
+//   // const signup = useCallback(async (email, password) => {
+//   //   await auth.createUserWithEmailAndPassword(email, password)
+//   // }, [])
+
+//   // const signup = useCallback(async (email, password) => {
+//   //   await auth.signInWithEmailAndPassword(email, password)
+//   // }, [])
+
+//   const signout = useCallback(async () => {
+//     await firebase.auth().signOut()
+//   }, [])
+
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged(user => setCurrentUser(user), [])
+  // })
+
+//   return (
+//     <AuthContext.Provider value={{ currentUser, signout }}>
+//       {children}
+//     </AuthContext.Provider>
+//   )
+// }
+// export default connect()(Auth);

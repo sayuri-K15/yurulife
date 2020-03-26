@@ -1,30 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import firebase from "firebase";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import firebase from "firebase";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-const SignUp = (props) => {
+const Login = (props) => {
+
   const { register, errors } = useForm();
 
-  // const onSubmit = data => {
-  //   alert(JSON.stringify(data, null));
-  // };
-  const [user, setUser] = useState("")
+  // const onSubmit = data => {alert(JSON.stringify(data, null))}
+  // console.log(watch("email"))
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     switch (e.target.name) {
-      case "user":
-        setUser(e.target.value)
       case "email":
         setEmail(e.target.value);
         break;
@@ -34,15 +32,19 @@ const SignUp = (props) => {
       default:
     }
   };
-  const handleSignUp = async e => {
+
+  
+  const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      await firebase.auth().createUserWithEmailAndPassword(user,email, password);
-      alert(props)
-      props.history.push("/mypage");
-    } catch (e) {
-      setErrorMessage("メールアドレスかパスワードの入力に不備があります");
-    }
+      try {
+        await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password);
+        
+        props.history.push("/mypage")
+      } catch (e) {
+        alert(e)
+      }
   };
 
   return (
@@ -51,31 +53,20 @@ const SignUp = (props) => {
         <Header />
         <FormContainer>
           <div className="form">
-            <h3>新規登録</h3>
-            <Form onSubmit={handleSignUp}>
+            <h3>ログイン</h3>
+            <Form onSubmit={handleLogin}>
+              {setErrorMessage && (
+                <Alert varient="danger">{setErrorMessage}</Alert>
+              )}
               <Form.Group controlId="formGroupEmail">
                 <Form.Label style={{ fontSize: "12px" }}>
-                  アカウント名
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="おなまえ"
-                  name="user"
-                  ref={register({
-                    required: true,
-                    minLength: 2
-                  })}
-                  className={
-                    errors.email ? "input-error input-empty" : "input-empty"
-                  }
-                />
-                <Form.Label style={{ fontSize: "12px" }}>
-                  メールアドレス
+                  メールアドレス{" "}
                 </Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="メールアドレスを入力してください"
                   name="email"
+                  value={email}
                   ref={register({
                     required: true,
                     minLength: 2,
@@ -84,6 +75,7 @@ const SignUp = (props) => {
                   className={
                     errors.email ? "input-error input-empty" : "input-empty"
                   }
+                  onChange={handleChange}
                 />
                 <span style={{ color: "#db7302" }}>
                   {errors.email && "入力がされていません "}
@@ -95,29 +87,30 @@ const SignUp = (props) => {
                     "メールアドレスとして正しくありません"}
                 </span>
               </Form.Group>
+
               <Form.Group controlId="formGroupPassword">
                 <Form.Label style={{ fontSize: "12px" }}>パスワード</Form.Label>
                 <Form.Control
                   name="password"
                   type="password"
-                  placeholder="Password"
+                  placeholder="パスワードを入力してください"
+                  value={password}
                   ref={register({
                     required: true,
                     minLength: 4
                   })}
+                  onChange={handleChange}
                 />
                 <span style={{ color: "#db7302" }}>
                   {errors.password && "5文字以上入力してください"}
                 </span>
               </Form.Group>
-              <div className="privacy-info">
-                <a>利用規約</a> ／ <a>個人情報保護方針</a>{" "}
-                に同意のうえ、「送信する」をご選択ください。
-              </div>
+
               <Button type="submit" variant="secondary" block>
-                送信する
+                ログイン
               </Button>
             </Form>
+            <a href="/signup">初めてご利用になる方はこちら</a>
           </div>
         </FormContainer>
       </div>
@@ -125,7 +118,7 @@ const SignUp = (props) => {
     </div>
   );
 };
-export default SignUp;
+export default Login;
 
 const FormContainer = styled.form`
   margin: 80px auto 200px;
@@ -135,15 +128,16 @@ const FormContainer = styled.form`
 
   .form {
     margin-bottom: 100px;
+    padding-bottom: 100px;
   }
   h3 {
     font-size: 16px;
     margin-bottom: 40px;
     border-bottom: 1px solid #ccc;
   }
-  .privacy-info {
-    margin: 60px 0 30px;
-    font-size: 13px;
+
+  a {
+    font-size: 11px;
   }
   a:hover {
     text-decoration: underline;

@@ -5,11 +5,14 @@ import { Icon } from "react-icons-kit"
 import {facebookSquare} from 'react-icons-kit/fa/facebookSquare'
 import {twitterSquare} from 'react-icons-kit/fa/twitterSquare'
 import {pinterestSquare} from 'react-icons-kit/fa/pinterestSquare'
+import FooterImg from "../image/footer.jpg"
 
 const Footer = () => {
   return (
     <FooterContainer className="footer-container">
-      <div className="footer-prev">フッター広告作るよ</div>
+      <div className="footer-prev">
+        <img src={FooterImg} alt="" width="1020" height="350" style={{ objectFit: "cover"}}/>
+      </div>
       <div className="footer-content">
         <div className="footer-left_tab">
           <ul>
@@ -74,6 +77,7 @@ const FooterContainer = styled.footer`
   .footer-right_tab {
     width: 320px;
     text-align: center;
+    font-family: 'Dancing Script', cursive;
   }
 
   .footer-right_tab p {

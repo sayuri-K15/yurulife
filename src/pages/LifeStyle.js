@@ -1,14 +1,13 @@
 import React, { Component, useEffect } from "react";
-
+import firebase from "firebase";
 import Header from "../components/Header";
 import ContentLife from "../components/content/ContentLife";
-import Article from "../components/Articles"
+import ContentArticlesData from "../components/firebase/ContentArticlesData"
 import SideMenu from "../components/SideMenu";
 import SideRanking from "../components/SideRanking";
 import Footer from "../components/Footer";
 
-const LifeStyle = () => {
-
+const LifeStyle = (props) => {
   useEffect(() => {
     window.scrollTo(0,0)
   })
@@ -18,7 +17,7 @@ const LifeStyle = () => {
       <div className="wrapper">
         <Header />
         <ContentLife />
-        <Article />
+        <ContentArticlesData />
         <SideMenu />
         <SideRanking />
       </div>

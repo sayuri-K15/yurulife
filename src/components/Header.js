@@ -1,20 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components"
 import { Icon } from "react-icons-kit"
 import {plus} from 'react-icons-kit/fa/plus'
 import {signIn} from 'react-icons-kit/fa/signIn'
 
+import { UserBtn, GuestBtn} from "./login/LoginButton"
+import firebase from "firebase";
 
-const Header = () => {
+
+const Header = (props) => {
+  
+  
   return (
     <HeaderContainer className="header-container">
       <div className="header-top">
-        <Logo><Link to="/">YuruLife</Link></Logo>
-        <NavLink to="/login" className="login-btn">
-          <Icon icon={signIn} className="login-icon"/>
-          ログイン
-        </NavLink>
+        <Logo><Link to="/"className="logo">YuruLife</Link></Logo>
+        {props.currentUser ? <UserBtn/> : <GuestBtn />}
         <NavLink to="/signup" className="signIn-btn">
           <Icon icon={ plus } className="signIn-icon"/>
           新規登録
@@ -27,8 +29,11 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-  background: #f2f2f2;
   position: relative;
+
+  .logo:hover {
+      text-decoration: none;
+  }
 
   .header-top {
     display: frex;
@@ -63,4 +68,7 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.h1`
   margin: 35px auto 0;
+  font-family: 'Dancing Script', cursive;
+  color: #000;
+  
 `

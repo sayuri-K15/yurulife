@@ -41,9 +41,9 @@ const Article = (props) => {
 export default connect((state) => state)(Article);
 
 const ArticleContainer = styled.section`
-  background: #f2f2f2;
   width: 700px;
   margin-bottom: 50px;
+  border: 1px solid #f2f2f2;
 
   // .article-content {
   //   display: inline-block;

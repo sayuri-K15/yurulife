@@ -5,7 +5,7 @@ import { Icon } from "react-icons-kit";
 import {login} from 'react-icons-kit/ikons/login'
 import {logout} from 'react-icons-kit/ikons/logout'
 
-const UserBtn = () => {
+export const UserBtn = () => {
   return (
     <NavLink to="/" className="login-btn">
       <Icon icon={logout} className="login-icon" />
@@ -13,7 +13,7 @@ const UserBtn = () => {
     </NavLink>
   );
 };
-const GuestBtn = () => {
+export const GuestBtn = () => {
   return (
     <NavLink to="/login" className="login-btn">
       <Icon icon={login} className="login-icon" />
@@ -21,11 +21,12 @@ const GuestBtn = () => {
     </NavLink>
   );
 };
-
-export const LoginBtn = (props) => {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserBtn />;
-  }
-  return <GuestBtn />;
+export const MypageBtn = () => {
+  return (
+    <NavLink to="/mypage" className="login-btn">
+      <Icon icon={login} className="login-icon" />
+      マイページへ
+    </NavLink>
+  );
 };
+

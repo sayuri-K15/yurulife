@@ -57,8 +57,8 @@ const SideMenu = () => {
 export default SideMenu;
 
 const SideMenuContainer = styled.nav`
-  background: #f2f2f2;
-
+  border: 1px solid #f2f2f2;
+  font-size: 14px;
   .sidemenu-content {
     margin-left: 18px;
     margin-bottom: 16px;
@@ -73,6 +73,11 @@ const SideMenuContainer = styled.nav`
     padding-left: 36px;
     margin: 0;
     position: relative;
+
+    &:hover {
+      transition: 0.7s;
+      text-decoration: none;
+    }
   }
 
   .left-icon {
