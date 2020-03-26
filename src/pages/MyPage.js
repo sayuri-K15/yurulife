@@ -10,6 +10,15 @@ import { Image } from "react-bootstrap";
 import perfume from "../image/perfume.jpg";
 
 const MyPage = props => {
+  const AcountName = () => {
+    const user = firebase.auth().currentUser
+    const userName = user.email
+    if (user != null) {
+      return (
+        <h4 className="acount-name"> {userName} <span>さんのページ</span></h4>
+      )
+    }
+  }
 
   return (
     <MypageTabContainer>
@@ -23,9 +32,7 @@ const MyPage = props => {
             height="80"
             style={{ objectFit: "cover" }}
           />
-          <h4>
-            アカウント名<span>さん</span>
-          </h4>
+          <AcountName />
         </div>
         <CustomizedTabs />
       </div>
@@ -55,10 +62,10 @@ const MypageTabContainer = styled.div`
   }
 
   .mycontent {
-    width: 700px;
+    width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
-    margin: 20px auto;
+    margin: 20px 0;
     display: flex;
 
     h4 {
@@ -69,4 +76,6 @@ const MypageTabContainer = styled.div`
       font-size: 12px;
     }
   }
+
+  
 `;

@@ -16,6 +16,7 @@ export default Hero;
 
 const HeroContainer = styled.div`
   background: #f2f2f2;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 700px;
   &:hover {

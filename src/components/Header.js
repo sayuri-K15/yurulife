@@ -1,27 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components"
 import { Icon } from "react-icons-kit"
 import {plus} from 'react-icons-kit/fa/plus'
-import {signIn} from 'react-icons-kit/fa/signIn'
 
-import { UserBtn, GuestBtn} from "./login/LoginButton"
+import { LogoutBtn, GuestBtn, MypageBtn} from "./login/LoginButton"
 import firebase from "firebase";
 
 
-const Header = (props) => {
-  
-  
+const Header = () => {
+  const user = firebase.auth().currentUser
+  console.log(user)
+  const AcountName = () => {
+    if (!user) return null
+    if (user != null) {
+      const userName = user.email
+      return (
+        <div className="acount-name">ようこそ {userName} さん</div>
+      )
+    }
+  }
   return (
     <HeaderContainer className="header-container">
       <div className="header-top">
         <Logo><Link to="/"className="logo">YuruLife</Link></Logo>
-        {props.currentUser ? <UserBtn/> : <GuestBtn />}
+        {user ? <LogoutBtn/> : <GuestBtn />}
+        {user ? <MypageBtn /> :
         <NavLink to="/signup" className="signIn-btn">
           <Icon icon={ plus } className="signIn-icon"/>
           新規登録
-        </NavLink>
+        </NavLink>}
       </div>
+      <AcountName />
     </HeaderContainer>
   );
 };
@@ -63,6 +73,13 @@ const HeaderContainer = styled.header`
   }
   .signIn-btn {
     right: 0;
+  }
+
+  .acount-name {
+    font-size: 13px;
+    color: #666;
+    padding: 10px 0;
+    overflow: hidden;
   }
 `
 

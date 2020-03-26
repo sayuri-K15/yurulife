@@ -38,7 +38,6 @@ const SignUp = (props) => {
     e.preventDefault();
     try {
       await firebase.auth().createUserWithEmailAndPassword(user,email, password);
-      alert(props)
       props.history.push("/mypage");
     } catch (e) {
       setErrorMessage("メールアドレスかパスワードの入力に不備があります");
