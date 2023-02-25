@@ -1,7 +1,7 @@
 import React, { Component, useContext } from "react";
 import "./scss/index.scss";
-import { Switch, Route,  } from "react-router-dom";
-import firebase from "firebase";
+import { BrowserRouter, Route,  } from "react-router-dom";
+import firebase from "firebase/compat/app";
 
 import Login from "./components/login/Login";
 import SignUp from "./pages/SignUp";
@@ -63,7 +63,7 @@ class App extends Component {
     const { authenticated, currentUser,loading } = this.state;
     if (loading) return <p>loading...</p>;
     return (
-        <Switch>
+        <BrowserRouter>
           <Route exact path="/" component={Main} />
           {this.state.currentUser ? 
           <Route exact path="/mypage" component={MyPage} /> :
@@ -79,7 +79,7 @@ class App extends Component {
           <Route exact path="/Food" component={Food} />
           <Route exact path="/sports" component={Sports} />
           <Route exact path="/goods" component={Goods} />
-        </Switch>
+        </BrowserRouter>
     );
   }
 }

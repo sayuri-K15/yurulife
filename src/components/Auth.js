@@ -1,5 +1,5 @@
 // import React, {createContext, useEffect, useState, useCallback} from 'react';
-// import firebase from "firebase";
+// iimport firebase from "firebase/compat/app";";
 // import { Redirect } from 'react-router-dom';
 // import { connect } from "react-redux"
 // import Login from '../components/login/Login';

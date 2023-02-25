@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink} from "react-router-dom";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 
 import { Icon } from "react-icons-kit";
 import {login} from 'react-icons-kit/ikons/login'

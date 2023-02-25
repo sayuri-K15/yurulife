@@ -5,7 +5,7 @@ import { Icon } from "react-icons-kit"
 import {plus} from 'react-icons-kit/fa/plus'
 
 import { LogoutBtn, GuestBtn, MypageBtn} from "./login/LoginButton"
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 
 
 const Header = () => {

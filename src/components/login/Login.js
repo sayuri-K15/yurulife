@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 
 import Header from "../Header";
 import Footer from "../Footer";

@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 import styled from "styled-components";
 
 import Header from "../components/Header";

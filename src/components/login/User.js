@@ -1,4 +1,4 @@
-// import firebase from "firebase";
+// iimport firebase from "firebase/compat/app";";
 
 
 // class User {

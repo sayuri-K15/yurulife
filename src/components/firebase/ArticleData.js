@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 import ArticlesCard from "../articles/ArticlesCard";
 
 class ArticleData extends Component {
