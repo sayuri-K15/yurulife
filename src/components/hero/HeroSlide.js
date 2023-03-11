@@ -20,7 +20,7 @@ const ControlledCarousel = () => {
   }
 
   const titleStr = {
-    fontSize: "14px", 
+    fontSize: "14px",
     width: "700"
   }
 
@@ -29,7 +29,7 @@ const ControlledCarousel = () => {
   }
 
   return (
-    <Carousel  onSelect={handleSelect} interval="3000" fade="true">
+    <Carousel activeIndex={index} onSelect={handleSelect} interval="3000" fade="true">
       <Carousel.Item>
         <img
           className={slideImage}

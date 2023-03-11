@@ -57,7 +57,7 @@ class MyPost extends Component {
   }
 
   addFireData() {
-    if (this.state.lastID == -1) {
+    if (this.state.lastID === -1) {
       return;
     }
     let id = this.state.lastID * 1 + 1;
@@ -70,10 +70,10 @@ class MyPost extends Component {
     });
   }
 
-  
+
 
   render() {
-    if (this.state.lastID == -1) {
+    if (this.state.lastID === -1) {
       this.getLastID();
     }
     return (
@@ -125,7 +125,7 @@ const PostContainer = styled.div`
     border: 1px solid #ccc;
     height: 35px;
     line-height: 30;
-    
+
   }
   input::placeholder {
     font-size: 14px;

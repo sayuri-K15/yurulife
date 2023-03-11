@@ -3,8 +3,8 @@ import styled from "styled-components";
 import firebase from "firebase/compat/app";
 
 class SideRanking extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data: []
     };
@@ -27,7 +27,7 @@ class SideRanking extends Component {
 
   getTableData() {
     let result = [];
-    if (this.state.data == null || this.state.data.length == 0) {
+    if (this.state.data == null || this.state.data.length === 0) {
       return [
         <tr key="10">
           <th>No data.</th>
@@ -43,10 +43,10 @@ class SideRanking extends Component {
           </th>
           <td>
             <p>
-              <a>{this.state.data[i].title}</a>
+              <a href="/">{this.state.data[i].title}</a>
             </p>
             <span className="rank-tag">
-              <a>{this.state.data[i].tag}</a>
+              <a href="/">{this.state.data[i].tag}</a>
             </span>
           </td>
         </tr>
@@ -56,7 +56,7 @@ class SideRanking extends Component {
   }
 
   render() {
-    if (this.state.data.length == 0) {
+    if (this.state.data.length === 0) {
       this.getFireData();
     }
     return (

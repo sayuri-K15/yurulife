@@ -1,7 +1,10 @@
-import React, { Component, useContext } from "react";
+import React, { Component } from "react";
 import "./scss/index.scss";
 import { BrowserRouter, Route,  } from "react-router-dom";
 import firebase from "firebase/compat/app";
+import 'firebase/compat/storage'
+import 'firebase/compat/analytics'
+import 'firebase/compat/auth'
 
 import Login from "./components/login/Login";
 import SignUp from "./pages/SignUp";
@@ -30,8 +33,8 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       loading: true,
       authenticated: false,
@@ -39,7 +42,7 @@ class App extends Component {
     };
   }
 
-  
+
   componentWillMount() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -58,18 +61,18 @@ class App extends Component {
     });
   }
 
-  
+
   render() {
-    const { authenticated, currentUser,loading } = this.state;
+    const { loading } = this.state;
     if (loading) return <p>loading...</p>;
     return (
         <BrowserRouter>
           <Route exact path="/" component={Main} />
-          {this.state.currentUser ? 
+          {this.state.currentUser ?
           <Route exact path="/mypage" component={MyPage} /> :
           <Route exact path="/" component={Main} />}
-          
-        
+
+
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           {/* <Route exact path="/mypage" component={MyPage} /> */}

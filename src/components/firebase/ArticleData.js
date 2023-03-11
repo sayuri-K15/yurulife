@@ -28,7 +28,7 @@ class ArticleData extends Component {
 
   getTableData() {
     let result = [];
-    if (this.state.data == null || this.state.data.length == 0) {
+    if (this.state.data == null || this.state.data.length === 0) {
       return [
         <tr key="10">
           <th>No data.</th>
@@ -47,7 +47,7 @@ class ArticleData extends Component {
     return result;
   }
   render() {
-    if (this.state.data.length == 0) {
+    if (this.state.data.length === 0) {
       this.getFireData();
     }
     return(

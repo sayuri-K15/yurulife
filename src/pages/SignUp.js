@@ -25,6 +25,7 @@ const SignUp = (props) => {
     switch (e.target.name) {
       case "user":
         setUser(e.target.value)
+        break;
       case "email":
         setEmail(e.target.value);
         break;
@@ -52,6 +53,7 @@ const SignUp = (props) => {
           <div className="form">
             <h3>新規登録</h3>
             <Form onSubmit={handleSignUp}>
+              <div>{errorMessage}</div>
               <Form.Group controlId="formGroupEmail">
                 <Form.Label style={{ fontSize: "12px" }}>
                   アカウント名
@@ -67,6 +69,7 @@ const SignUp = (props) => {
                   className={
                     errors.email ? "input-error input-empty" : "input-empty"
                   }
+                  onChange={handleChange}
                 />
                 <Form.Label style={{ fontSize: "12px" }}>
                   メールアドレス
@@ -78,11 +81,12 @@ const SignUp = (props) => {
                   ref={register({
                     required: true,
                     minLength: 2,
-                    pattern: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                    pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
                   })}
                   className={
                     errors.email ? "input-error input-empty" : "input-empty"
                   }
+                  onChange={handleChange}
                 />
                 <span style={{ color: "#db7302" }}>
                   {errors.email && "入力がされていません "}
@@ -104,13 +108,14 @@ const SignUp = (props) => {
                     required: true,
                     minLength: 4
                   })}
+                  onChange={handleChange}
                 />
                 <span style={{ color: "#db7302" }}>
                   {errors.password && "5文字以上入力してください"}
                 </span>
               </Form.Group>
               <div className="privacy-info">
-                <a>利用規約</a> ／ <a>個人情報保護方針</a>{" "}
+                <a href="/">利用規約</a> ／ <a href="/">個人情報保護方針</a>{" "}
                 に同意のうえ、「送信する」をご選択ください。
               </div>
               <Button type="submit" variant="secondary" block>

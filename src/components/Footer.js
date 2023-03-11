@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Icon } from "react-icons-kit"
@@ -100,7 +100,7 @@ const FooterContainer = styled.footer`
 
   .footer-alpha ul {
     display: flex;
-  } 
+  }
 
   .footer-alpha  ul li {
     margin-right: 10px;

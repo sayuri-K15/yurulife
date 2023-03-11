@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import firebase from "firebase/compat/app";
 import "firebase/storage";
 import styled from "styled-components";
 

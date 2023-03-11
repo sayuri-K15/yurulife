@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Skincare from "../../image/skincare.jpg";
 
@@ -9,7 +9,7 @@ const ContentGoods = () => {
     <div className="lead-container hero-container">
       <div className="content-image">
         <Link>
-          <img src={Skincare} />
+          <img src={Skincare} alt=""/>
         </Link>
         <p className="content-text">
           テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト

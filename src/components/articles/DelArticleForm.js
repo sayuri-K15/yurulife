@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { deleteArticle } from "../../store/Article/reducer";
 
 class DeleteArticleFrom extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       number: 0
     };
@@ -27,14 +27,14 @@ class DeleteArticleFrom extends Component {
     });
   }
   render() {
-    let n = 0;
+    // let n = 0;
     // let items = this.props.data.map((value) => (
     //   <option key={n} value={n++}>
     //     {value.message.substring(0, 10)}
     //   </option>
     // ));
-    let items = this.props.data 
-    
+    let items = this.props.data
+
     return (
       <div>
         <form onSubmit={this.doAction}>

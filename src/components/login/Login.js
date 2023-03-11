@@ -33,14 +33,14 @@ const Login = (props) => {
     }
   };
 
-  
+
   const handleLogin = async (e) => {
     e.preventDefault();
       try {
         await firebase
         .auth()
         .signInWithEmailAndPassword(email, password);
-        
+
         props.history.push("/mypage")
       } catch (e) {
         alert(e)
@@ -56,7 +56,7 @@ const Login = (props) => {
             <h3>ログイン</h3>
             <Form onSubmit={handleLogin}>
               {setErrorMessage && (
-                <Alert varient="danger">{setErrorMessage}</Alert>
+                <Alert varient="danger">{errorMessage}</Alert>
               )}
               <Form.Group controlId="formGroupEmail">
                 <Form.Label style={{ fontSize: "12px" }}>
@@ -70,7 +70,7 @@ const Login = (props) => {
                   ref={register({
                     required: true,
                     minLength: 2,
-                    pattern: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                    pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
                   })}
                   className={
                     errors.email ? "input-error input-empty" : "input-empty"

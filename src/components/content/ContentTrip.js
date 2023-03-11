@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Sea from "../../image/see.jpg";
 
@@ -9,7 +9,7 @@ const ContentTrip = () => {
     <div className="lead-container hero-container">
       <div className="content-image">
         <Link>
-          <img src={Sea} />
+          <img src={Sea} alt=""/>
         </Link>
         <p className="content-text">
           テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト

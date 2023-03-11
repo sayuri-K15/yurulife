@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components"
 import { Icon } from "react-icons-kit"
@@ -87,5 +87,5 @@ const Logo = styled.h1`
   margin: 35px auto 0;
   font-family: 'Dancing Script', cursive;
   color: #000;
-  
+
 `

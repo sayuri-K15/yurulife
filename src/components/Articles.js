@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 // import articles from "./articles/Articles.data"
 // import Pagination from "./pagination/Pagination"
-import ListComponent from "./pagination/list";
-import ArticlesPage from "../components/articles/ArticlesPage";
-import AddArticleForm from "../components/articles/AddArticleForm";
-import FindArticleForm from "../components/articles/FindArticleForm";
-import DeleteArticleForm from "../components/articles/DelArticleForm";
+// import ListComponent from "./pagination/list";
+// import ArticlesPage from "../components/articles/ArticlesPage";
+// import AddArticleForm from "../components/articles/AddArticleForm";
+// import FindArticleForm from "../components/articles/FindArticleForm";
+// import DeleteArticleForm from "../components/articles/DelArticleForm";
 
 
 import ArticleData from "../components/firebase/ArticleData"
@@ -72,7 +72,7 @@ const ArticleContainer = styled.section`
   // }
 `;
 
-const ThumbnailImg = styled.img`
-  width: 220px;
-  height: 165px;
-`;
+// const ThumbnailImg = styled.img`
+//   width: 220px;
+//   height: 165px;
+// `;

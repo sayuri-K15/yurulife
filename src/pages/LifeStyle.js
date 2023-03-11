@@ -1,5 +1,4 @@
-import React, { Component, useEffect } from "react";
-import firebase from "firebase/compat/app";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import ContentLife from "../components/content/ContentLife";
 import ContentArticlesData from "../components/firebase/ContentArticlesData"

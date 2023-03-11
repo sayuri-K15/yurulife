@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from "styled-components";
-import desert from "../image/desert.jpg"
+// import desert from "../image/desert.jpg"
 import ControlledCarousel from "./hero/HeroSlide"
 
  const Hero = () => {
@@ -26,6 +26,6 @@ const HeroContainer = styled.div`
 
 `
 
-const HeroImg = styled.img`
-  height: 400px;
-`
+// const HeroImg = styled.img`
+//   height: 400px;
+// `
